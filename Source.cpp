@@ -6,18 +6,18 @@ int main()
 {
     cout << "--- WELCOME TO THE LIBRARY ---\n";
     Library obj;
-    while (true) {
-        try
-        {
-            obj.Interface();
-        }
-        catch (const char* str)
-        {
-            cout << "\n!!! ERROR !!!" << str;
-        }
-        catch (...)
-        {
-            cout << "\n!!! ERROR !!!";
-        }
+    try
+    {
+        obj.Interface();
+    }
+    catch (const char* str)
+    {
+        cout << "\n!!! ERROR !!!" << str;
+        obj.Interface();
+    }
+    catch (...)
+    {
+        cout << "\n!!! ERROR !!!";
+        obj.Interface();
     }
 }
